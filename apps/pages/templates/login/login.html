@@ -1,0 +1,36 @@
+<ion-view view-title="用户登录" cache-view="false">
+    <ion-content overflow-scroll="false" ng-controller="loginCtrl"
+    id="loginByPWD" >
+        <form name="loginForm">
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">用户名：</span>
+                    <input type="text" placeholder="请输入用户名" name="username" ng-model="params.username" required maxlength="20">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">密码：</span>
+                    <input type="password" placeholder="请输入密码" name="pw" ng-model="params.password" required maxlength="20">
+                </label>
+            </div>
+            <div class="padding">
+                <button class="button button-block button-pink" ng-click="login(loginForm)">登录</button>
+            </div>
+        </form>
+        <div class="tips">
+            <span class="byCode">忘记密码？</span>
+        </div>
+        <div class="otherWay">
+                <h3>
+                    <span>第三方登录</span>
+                </h3>
+                <ul class="otherWayInfo clearfix">
+                    <li class="qq">
+                        <a href="javascript:;">腾讯QQ</a>
+                    </li>
+                    <li class="sina">
+                        <a href="javascript:;">新浪微博</a>
+                    </li>
+                </ul>
+            </div>
+    </ion-content>
+</ion-view>

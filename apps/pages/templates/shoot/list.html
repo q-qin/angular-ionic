@@ -1,0 +1,131 @@
+<ion-view>
+    <ion-content overflow-scroll="false" padding="false" on-scroll="getScrollPosition()" 
+    id="hunshaList">
+    	<!-- <div class="secTitMain redSquare">
+	        <div class="title"><a class="selected">商户</a><a href="#">作品</a>
+	        </div>
+	    </div> -->
+	    <section id="sellerSort">
+			<div class="allSeller sortNav">
+				<div class="selectShow" data-type="1"><span>全部商区</span><i class="sortIconI"></i></div>
+				<div class="popup">
+					<ul>
+						<li data-url=""><a href="#">全部商区</a></li>
+	                    <li data-url="Region-GYYQ"><a href="#">工业园区</a></li>
+	                    <li data-url="Region-PJQ"><a href="#">平江区</a></li>
+	                    <li data-url="Region-WZQ"><a href="#">吴中区</a></li>
+	                    <li data-url="Region-GXQ"><a href="#">高新区</a></li>
+	                    <li data-url="Region-JCQ"><a href="#">金阊区</a></li>
+	                    <li data-url="Region-CLQ"><a href="#">沧浪区</a></li>
+	                    <li data-url="Region-XCQ"><a href="#">相城区</a></li>
+	                    <li data-url="Region-CS"><a href="#">常熟</a></li>
+	                    <li data-url="Region-KS"><a href="#">昆山</a></li>
+	                    <li data-url="Region-WJ"><a href="#">吴江</a></li>
+	                    <li data-url="Region-ZJG"><a href="#">张家港</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--全部商区 end-->
+			<div class="allSeller sortNav">
+                <div class="selectShow " data-type="2"><span>全部类型</span><i class="sortIconI "></i></div>
+                <div class="popup ">
+                    <div>
+                        <ul>
+                            <li><a href="#">全部类型</a></li>
+							<li><a href="#">欧式</a></li>
+							<li><a href="#">韩式</a></li>
+							<li><a href="#">个性</a></li>
+							<li><a href="#">中式</a></li>
+							<li><a href="#">旅拍</a></li>
+							<li><a href="#">微电影</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--全部商户 end-->
+            <div class="smartSort sortNav">
+				<div class="selectShow" data-type="3"><span>智能排序</span><i class="sortIconI"></i></div>
+				<div class="popup ">
+					<ul>
+		                <li data-url="1" class="selected"><a>智能排序</a></li>
+		                <li data-url="2" ><a>评分最高</a></li>
+		                <li data-url="3" ><a>摄影最佳</a></li>
+		                <li data-url="4" ><a>造型最佳</a></li>
+		                <li data-url="5" ><a>服务最佳</a></li>
+		                <li data-url="6" ><a>价格最低<i class="sortUpI"></i></a></li>
+		                <li data-url="7" ><a>价格最高<i class="sortDownI"></i></a></li>
+		            </ul>
+				</div>
+			</div>
+			<!--智能排序 end-->
+		</section>
+
+		<section id="sellerList">
+			<ul>
+				<li ui-sref="app.shoot-detail({shootid:0})">
+					<dl class="clearfix">
+                    	<dt><img src="images/20170111164245928.png"></dt>
+                        <dd>
+                        <div class="title">
+                        	<h3>
+                                <i>太郎花子婚纱摄影</i>
+                                <span class="fu"></span>
+                                <span class="gift"></span>
+                                <span class="sale"></span>
+                            </h3>
+                         </div>
+                         <div class="returnCash">
+                         	<p class="row1">
+                            <span class="big">￥<i>3999-25999</i>/套</span>
+                            </p><p class="row2">
+                            <span class="district">平江区</span><span class="style">韩式</span></p>
+                         </div>
+                      </dd>
+                   </dl>
+				</li>
+				<li ui-sref="app.shoot-detail({shootid:1})">
+					<dl class="clearfix">
+                    	<dt><img src="images/20170111164245928.png"></dt>
+                        <dd>
+                        <div class="title">
+                        	<h3>
+                                <i>太郎花子婚纱摄影</i>
+                                <span class="fu"></span>
+                                <span class="gift"></span>
+                                <span class="sale"></span>
+                            </h3>
+                         </div>
+                         <div class="returnCash">
+                         	<p class="row1">
+                            <span class="big">￥<i>3999-25999</i>/套</span>
+                            </p><p class="row2">
+                            <span class="district">平江区</span><span class="style">韩式</span></p>
+                         </div>
+                      </dd>
+                   </dl>
+				</li>
+				<li ui-sref="app.shoot-detail({shootid:2})">
+					<dl class="clearfix">
+                    	<dt><img src="images/20170111164245928.png"></dt>
+                        <dd>
+                        <div class="title">
+                        	<h3>
+                                <i>太郎花子婚纱摄影</i>
+                                <span class="fu"></span>
+                                <span class="gift"></span>
+                                <span class="sale"></span>
+                            </h3>
+                         </div>
+                         <div class="returnCash">
+                         	<p class="row1">
+                            <span class="big">￥<i>3999-25999</i>/套</span>
+                            </p><p class="row2">
+                            <span class="district">平江区</span><span class="style">韩式</span></p>
+                         </div>
+                      </dd>
+                   </dl>
+				</li>
+			</ul>
+		</section>
+    </ion-content>
+</ion-view>

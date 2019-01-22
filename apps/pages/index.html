@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link rel="manifest" href="manifest.json">
+    <!-- build:css css/all.min.css -->
+    <link type="text/css" href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link type="text/css" href="/public/scripts/lib/swiper/swiper-3.3.1.min.css" rel="stylesheet">
+    <link type="text/css" href="/public/scripts/lib/layer/layer.css" rel="stylesheet">
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+    <!-- endbuild -->
+    <!-- build:js framework/framework.min.js -->
+    <script type="text/javascript" src="lib/ionic/js/ionic.bundle.js"></script>
+    <script type="text/javascript" src="/public/scripts/lib/swiper/swiper-3.3.1.min.js" rel="stylesheet"></script>
+    <script type="text/javascript" src="/public/scripts/lib/layer/layer.js"></script>
+    <!-- endbuild -->
+    <!-- build:js scripts/all.min.js -->
+    <script type="text/javascript" src="scripts/public.js"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript" src="scripts/controllers.js"></script>
+    <script type="text/javascript" src="scripts/services.js"></script>
+    <script type="text/javascript" src="scripts/directives.js"></script>
+    <!-- endbuild -->
+</head>
+
+<body ng-app="app">
+    <!--
+      The nav bar that will be updated as we navigate between views.
+    -->
+    <ion-header-bar align-title="center" class="bar-light" ng-show="showTitle" >
+        <div class="buttons">
+            <button class="button-icon ion-ios-arrow-left" ng-click="goBack()" ng-show="showBack">返回</button>
+        </div>
+        <h1 class="title" >{{title}}</h1>
+        <div class="buttons">
+            <a class="button button-clear button-white" href="#/tab/index" ng-show="showHome">首页</a>
+        </div>
+    </ion-header-bar>
+    <ion-nav-view></ion-nav-view>
+    <div id="backTop" ng-click="goTop();" ng-show="showRock"></div>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?24f58c56845d6a9bdf266a7fe17996f5";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+</body>
+
+</html>

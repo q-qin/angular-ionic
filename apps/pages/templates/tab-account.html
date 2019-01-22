@@ -1,0 +1,35 @@
+<ion-view view-title="桔子精选婚庆 - 用户中心" cache-view="false">
+    <ion-content overflow-scroll="false" padding="false" id="myCenter">
+        <div class="main" >
+            <section class="my-info">
+                <!-- 未登录 -->
+                <div class="login-box" style="display: none;">
+                    <p>欢迎进入橘子喜铺！</p>
+                    <div class="btn-area"><a href="javascript:;" class="btn">点击登录</a></div>
+                </div>
+                <!-- 已登录 -->
+                <div class="info-box" style="">
+                    <p>{{username}}</p>
+                    <div class="btn-area"><a href="javascript:;" class="btn">修改资料</a></div>
+                </div>
+            </section>
+            <!-- 列表 -->
+            <div class="my-list">
+                <ul>
+                    <li class="reservation"><a href="javascript:;" ng-click="commingSoon();">我的预约单<i class="dot"></i><span class="num"></span></a></li>
+                    <li class="rewards"><a href="javascript:;" ng-click="commingSoon();">已完成订单<i class="icon-new">new</i></a></li>
+                </ul>
+                <ul>
+                    <li class="coupon"><a href="javascript:;" ng-click="commingSoon();">我的券包<i class="dot"></i><span class="num"></span></a></li>
+                    <li class="favorite"><a href="javascript:;" ng-click="commingSoon();">我的收藏<span class="num"></span></a></li>
+                </ul>
+                <ul>
+                    <li class="feedback"><a href="javascript:;" ng-click="commingSoon();">CEO信箱</a></li>
+                </ul>
+            </div>
+            <div class="padding">
+                <button class="button button-block button-pink" ng-click="logout()">退出登录</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

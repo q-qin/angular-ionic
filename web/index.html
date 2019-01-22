@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>桔子精选婚庆 - 扫码体验手机版</title>
+		<meta name="keywords" content="结婚,结婚网,婚博会,婚庆网,苏州结婚,苏州结婚网,苏州婚博会,苏州婚庆网">
+		<meta name="description" content="桔子精选婚庆(juzi001.com)是新颖的结婚预订平台,专业为新人提供苏州婚宴酒店预订、婚庆等服务,是新人必上的结婚网!">
+        <link rel="shortcut icon" href="/favicon.ico" />
+		<style>
+			body{ background: #F26695; font-family: "微软雅黑";}
+			.warp{ width: 100%; height: auto; min-width: 1000px; margin-top: 168px;}
+			.ad1{ background: url(img/bg.png) center center no-repeat; width: 1000px; height: 632px; margin: 0 auto; position: relative;}
+			.ewm{ position: absolute; width: 200px; height: 200px; left: 591px; top:83px;}
+			.foot{ width: 1000px; margin: 0 auto; font-size: 13px; color: #fff; text-align: center; margin-top: 90px;}
+			.foot a{color:#fff;text-decoration:none;}
+			.zixun{width:480px;height:250px;position: absolute;bottom:0;right:0;display:none;}
+			.zixun .title{width:250px;height:25px;background-image: url('img/h_bg.png');background-repeat: no-repeat;background-size: 100%;}
+			.zixun .content{color:#fff;font-size: 13px;}
+			.zixun .content table{width:100%;}
+			.zixun .content table tr{}
+			.zixun .content table tr td:nth-child(1){width:312px;border-bottom:1px dashed #f1f1f1;overflow: hidden;}
+			.zixun .content table tr td:nth-child(2){width:168px;text-align: right;border-bottom:1px dashed #f1f1f1;}
+			.zixun .content a{color:#fff;text-decoration: none;}
+		</style>
+		<script type="text/javascript">
+			(function (a) {if (/Mobile|Android|iPhone|iPod|Nokia|WP7|Symbian|MIDP|UCWEB|Minimo|Opera M(ob|in)i/.test(a) && !/iPad/.test(a)) { location.replace("/pages/") }})(navigator.userAgent);
+		</script>
+	</head>
+	<body >
+		<div class="warp" >
+			<div class="ad1">
+				<div class="zixun">
+					<div class="title">
+					</div>
+					<div class="content">
+						<table id="table">
+							
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="foot">Copyright© : 2017 juzi001.com All Rights Reserved.<br /><a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" target="_blank" >苏ICP备16032153号-1</a></div>
+		</div>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+    	<script type="text/javascript" src="share/layer/layer.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				if(location.protocol == 'http:'){
+					//$('.zixun').show();
+					//getZX();
+				}
+
+				function getZX (){
+					$.ajax({
+						url:'http://www.juzi001.com:3000/newslist',
+						timeout:5000,
+						type:'post',
+						data :{},
+						dataType:'json',
+						success:function(res){
+							if(res.code == 0){
+								var newslist = '';
+								$.each(res.data,function(i,n){
+									newslist += '<tr><td><a href="/newsdetail.html?id='+n.id+'" target="_blank">'+ (n.type==1?'【新闻资讯】':'【系统公告】')+n.title+'</a></td><td>'+format(new Date(n.updatetime))+'</td></tr>'
+								})
+								//console.log(newslist)
+								$('#table').html(newslist);
+							}else{
+								layer.alert(res.msg);
+								return false;
+							}
+						},error:function(){
+							layer.alert('资讯获取失败');
+							return false;
+						}
+					});
+				}
+			})
+
+			function format(date){
+				var year = date.getFullYear();
+				var month = date.getMonth() + 1;
+				var day = date.getDate();
+
+				var hour = date.getHours();
+				var minute = date.getMinutes();
+				var second = date.getSeconds();
+
+				return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':');
+			}
+
+			function formatNumber(n) {
+				n = n.toString()
+				return n[1] ? n : '0' + n
+			}
+		</script>
+	</body>
+</html>

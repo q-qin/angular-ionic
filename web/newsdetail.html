@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>桔子精选婚庆 - 扫码体验手机版</title>
+		<meta name="keywords" content="结婚,结婚网,婚博会,婚庆网,苏州结婚,苏州结婚网,苏州婚博会,苏州婚庆网">
+		<meta name="description" content="桔子精选婚庆(juzi001.com)是新颖的结婚预订平台,专业为新人提供苏州婚宴酒店预订、婚庆等服务,是新人必上的结婚网!">
+        <link rel="shortcut icon" href="/favicon.ico" />
+		<style>
+			body{}
+			.news{width: 1000px;margin:auto;background-image: url('img/pager_bg.png');background-position:top left;min-height: 500px;background-size: 100%;}
+			.news .title h2{color:444;}
+			.news .title span{text-align: right;color: #666;font-size: 12px;}
+
+		</style>
+	</head>
+	<body >
+	<div class="news">
+		<div class="title">
+			<h3 id="title"></h3>
+			<h5 id="subtitle"></h5>
+			<span>发布时间：<span id="updatetime"></span></span>
+		</div>
+		<div style="clear:both;height:25px;"></div>
+		<div class="content" id="content">
+			
+		</div>
+	</div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$.ajax({
+					url:'http://api.juzi001.com:3000/newsdetail',
+					timeout:5000,
+					type:'post',
+					data :{id:getUrlParam('id')},
+					dataType:'json',
+					success:function(res){
+						if(res.code == 0){
+							var data= res.data[0];
+							$('#title').html((data.type==1?'【新闻资讯】':'【系统公告】')+data.title);
+							$('#subtitle').html(data.subtitle);
+							$('#updatetime').html(format(new Date(data.updatetime)));
+							$('#content').html(data.content);
+							
+						}else{
+							alert(res.msg);
+							return false;
+						}
+					},error:function(){
+						alert('资讯获取失败');
+						return false;
+					}
+				});
+		})
+
+		function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return unescape(r[2]); return null; //返回参数值
+        }
+
+        function format(date){
+			var year = date.getFullYear();
+			var month = date.getMonth() + 1;
+			var day = date.getDate();
+
+			var hour = date.getHours();
+			var minute = date.getMinutes();
+			var second = date.getSeconds();
+
+			return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':');
+		}
+
+		function formatNumber(n) {
+			n = n.toString()
+			return n[1] ? n : '0' + n
+		}
+	</script>
+	</body>
+</html>

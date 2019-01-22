@@ -1,0 +1,12 @@
+<ion-view>
+    <ion-content overflow-scroll="false" padding="false" on-scroll="getScrollPosition()" 
+    id="newsDetail">
+    	<p class="title">{{data.title}}</p>
+    	<p style="text-align: center;color: #666;">
+    		类型：<span ng-bind="{1:'新闻资讯','2':'系统公告'}[data.type]"></span>
+    		<span style="margin: 20px;">作者：{{data.updateuser}}</span>
+    	</p>
+    	<p class="subtitle">{{data.subtitle}}</p>
+    	<p class="content" ng-bind-html="data.content|trust2Html"> </p>
+    </ion-content>
+</ion-view>

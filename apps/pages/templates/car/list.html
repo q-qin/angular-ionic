@@ -1,0 +1,123 @@
+<ion-view>
+    <ion-content overflow-scroll="false" padding="false" on-scroll="getScrollPosition()" 
+    id="carList">
+        <section id="sellerSort">
+            <div class="allSeller sortNav">
+                <div class="selectShow" data-type="1"><span>全部商区</span><i class="sortIconI"></i></div>
+                <div class="popup">
+                    <ul>
+                        <li data-url=""><a href="#">全部商区</a></li>
+                        <li data-url="Region-GYYQ"><a href="#">工业园区</a></li>
+                        <li data-url="Region-PJQ"><a href="#">平江区</a></li>
+                        <li data-url="Region-WZQ"><a href="#">吴中区</a></li>
+                        <li data-url="Region-GXQ"><a href="#">高新区</a></li>
+                        <li data-url="Region-JCQ"><a href="#">金阊区</a></li>
+                        <li data-url="Region-CLQ"><a href="#">沧浪区</a></li>
+                        <li data-url="Region-XCQ"><a href="#">相城区</a></li>
+                        <li data-url="Region-CS"><a href="#">常熟</a></li>
+                        <li data-url="Region-KS"><a href="#">昆山</a></li>
+                        <li data-url="Region-WJ"><a href="#">吴江</a></li>
+                        <li data-url="Region-ZJG"><a href="#">张家港</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--全部商区 end-->
+            <div class="allSeller sortNav">
+                <div class="selectShow " data-type="2"><span>不限品牌</span><i class="sortIconI "></i></div>
+                <div class="popup ">
+                    <div class="allBrands">
+                        <ul>
+                            <h3 id="A">A</h3>
+                            <li class="brandType " data-brand="1"><img src="images/audi.png"><i>奥迪</i></li>
+                            <li class="brandType " data-brand="21"><img src="images/asidunmading.png"><i>阿斯顿马丁</i></li>
+                            <h3 id="B">B</h3>
+                            <li class="brandType " data-brand="7"><img src="images/bingli.png"><i>宾利</i></li>
+                            <li class="brandType " data-brand="5"><img src="images/baoshijie.png"><i>保时捷</i></li>
+                            <li class="brandType " data-brand="3"><img src="images/benchi.png"><i>奔驰</i></li>
+                            <li class="brandType " data-brand="2"><img src="images/baoma.png"><i>宝马</i></li>
+                            <li class="brandType " data-brand="23"><img src="images/bieke.jpg"><i>别克</i></li>
+                            <li class="brandType " data-brand="26"><img src="images/bentian.jpg"><i>本田</i></li>
+                            <h3 id="D">D</h3>
+                            <li class="brandType " data-brand="18"><img src="images/dazhong.png"><i>大众</i></li>
+                            <h3 id="F">F</h3>
+                            <li class="brandType " data-brand="14"><img src="images/falali.png"><i>法拉利</i></li>
+                            <li class="brandType " data-brand="27"><img src="images/fengtian.jpg"><i>丰田</i></li>
+                            <h3 id="H">H</h3>
+                            <li class="brandType " data-brand="10"><img src="images/hanma.png"><i>悍马</i></li>
+                            <h3 id="J">J</h3>
+                            <li class="brandType " data-brand="4"><img src="images/jiebao.png"><i>捷豹</i></li>
+                            <li class="brandType " data-brand="12"><img src="images/jinlong.png"><i>金龙</i></li>
+                            <li class="brandType " data-brand="29"><img src="images/jipu.png"><i>JEEP</i></li>
+                            <h3 id="K">K</h3>
+                            <li class="brandType " data-brand="9"><img src="images/kaidilake.jpg"><i>凯迪拉克</i></li>
+                            <li class="brandType " data-brand="11"><img src="images/kelaisile.jpg"><i>克莱斯勒</i></li>
+                            <h3 id="L">L</h3>
+                            <li class="brandType " data-brand="8"><img src="images/laosilaisi.png"><i>劳斯莱斯</i></li>
+                            <li class="brandType " data-brand="17"><img src="images/linken.jpg"><i>林肯</i></li>
+                            <li class="brandType " data-brand="13"><img src="images/luhu.jpg"><i>路虎</i></li>
+                            <li class="brandType " data-brand="19"><img src="images/lanbojini.png"><i>兰博基尼</i></li>
+                            <h3 id="M">M</h3>
+                            <li class="brandType " data-brand="6"><img src="images/mashaladi.png"><i>玛莎拉蒂</i></li>
+                            <li class="brandType " data-brand="25"><img src="images/mazida.jpg"><i>马自达</i></li>
+                            <h3 id="T">T</h3>
+                            <li class="brandType " data-brand="15"><img src="images/tesila.png"><i>特斯拉</i></li>
+                            <h3 id="X">X</h3>
+                            <li class="brandType " data-brand="16"><img src="images/xuefulan.png"><i>雪佛兰</i></li>
+                            <li class="brandType " data-brand="28"><img src="images/xiandai.jpg"><i>现代</i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--全部品牌 end-->
+            <div class="smartSort sortNav">
+				<div class="selectShow" data-type="3"><span>智能排序</span><i class="sortIconI"></i></div>
+				<div class="popup">
+					<ul>
+		                <li data-sort=""><a>综合排序</a></li>
+                        <li data-sort="price|desc"><a>价格从高到低</a></li>
+                        <li data-sort="price|asc"><a>价格从低到高</a></li>
+                        <li data-sort="hot|desc"><a>人气从高到低</a></li>
+		            </ul>
+				</div>
+			</div>
+            <!--智能排序 end-->
+        </section>
+		<section id="resultList" style="">
+			<ul class="container">
+				<li ui-sref="app.car-detail({carid:0})">
+	                <a class="resultListItem">
+		                <dl class="clearfix">
+		                    <dt><img src="images/car.png"></dt>
+		                    <dd>
+		                    <div class="list-detail-word"><span>玛莎拉蒂Ghibli</span><span class="price">￥1880/半天</span></div>
+		                    </dd>
+		                    <div class="fire">2.4万+</div>
+		                </dl>
+	                </a>
+	            </li>
+	            <li ui-sref="app.car-detail({carid:1})">
+	                <a class="resultListItem">
+		                <dl class="clearfix">
+		                    <dt><img src="images/car.png"></dt>
+		                    <dd>
+		                    <div class="list-detail-word"><span>玛莎拉蒂Ghibli</span><span class="price">￥1880/半天</span></div>
+		                    </dd>
+		                    <div class="fire">2.4万+</div>
+		                </dl>
+	                </a>
+	            </li>
+	            <li ui-sref="app.car-detail({carid:2})">
+	                <a class="resultListItem">
+		                <dl class="clearfix">
+		                    <dt><img src="images/car.png"></dt>
+		                    <dd>
+		                    <div class="list-detail-word"><span>玛莎拉蒂Ghibli</span><span class="price">￥1880/半天</span></div>
+		                    </dd>
+		                    <div class="fire">2.4万+</div>
+		                </dl>
+	                </a>
+	            </li>
+			</ul>
+		</section>
+    </ion-content>
+</ion-view>

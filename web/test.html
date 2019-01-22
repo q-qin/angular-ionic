@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>测试</title>
+		<meta name="keywords" content="结婚,结婚网,婚博会,婚庆网,苏州结婚,苏州结婚网,苏州婚博会,苏州婚庆网">
+		<meta name="description" content="桔子精选婚庆(juzi001.com)是新颖的结婚预订平台,专业为新人提供苏州婚宴酒店预订、婚庆等服务,是新人必上的结婚网!">
+        <link rel="shortcut icon" href="/favicon.ico" />
+		<style>
+			body{ font-family: "微软雅黑";}
+		</style>
+	</head>
+	<body >
+		<input id="username" type="text" />
+		<input id="password" type="text" />
+		<a onclick="login()">登录</a>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			function login(){
+				$.ajax({
+					url:'http://115.159.63.110:4001/admin/login',
+					timeout:5000,
+					type:'post',
+					data :{
+						user_name:$('#username').val(),
+						password:$('#password').val()
+					},
+					dataType:'json',
+					success:function(res){
+						if(res.code == 0){
+							var newslist = '';
+							$.each(res.data,function(i,n){
+								newslist += '<tr><td><a href="/newsdetail.html?id='+n.id+'" target="_blank">'+ (n.type==1?'【新闻资讯】':'【系统公告】')+n.title+'</a></td><td>'+format(new Date(n.updatetime))+'</td></tr>'
+							})
+							//console.log(newslist)
+							$('#table').html(newslist);
+						}else{
+							return false;
+						}
+					},error:function(res){
+						return false;
+					}
+				});
+			}
+
+			function format(date){
+				var year = date.getFullYear();
+				var month = date.getMonth() + 1;
+				var day = date.getDate();
+
+				var hour = date.getHours();
+				var minute = date.getMinutes();
+				var second = date.getSeconds();
+
+				return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':');
+			}
+
+			function formatNumber(n) {
+				n = n.toString()
+				return n[1] ? n : '0' + n
+			}
+		</script>
+	</body>
+</html>
