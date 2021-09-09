@@ -1,4 +1,4 @@
-# 基于gulp+Ionic+angularjs1.x写的webapp [线上访问地址](http://juzi.3keji.com/)
+# 基于gulp+Ionic+angularjs1.x写的webapp
 
 
 ### 安装
